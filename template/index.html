@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nodos con Template</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main id="root"></main>
+
+    <!-- Template -->
+    <template id="card-template">
+        <div class="card">
+            <h1></h1>
+            <img src="" alt="Imagen">
+            <p></p>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- Modo Estricto: "use strict"; fuerza el uso de buenas prácticas en JavaScript, ayudando a evitar errores comunes.
+Referencia al Documento: let dom = document; es una variable para acceder al DOM de manera más corta.
+Selección del Contenedor: const $root = dom.querySelector("#root"); selecciona el contenedor principal donde se insertarán las tarjetas.
+Selección del Template: const template = dom.querySelector("#card-template"); selecciona el template que se utilizará para clonar las tarjetas.
+Fragmento de Documento: const $frag = dom.createDocumentFragment(); crea un fragmento de documento. Este es un contenedor liviano que permite agrupar nodos y añadirlos al DOM de una sola vez, mejorando el rendimiento.
+Lista de Datos: const lista = [ ... ]; es la lista de objetos que contiene la información para cada tarjeta.
+Iteración sobre la Lista: lista.forEach((element) => { ... }); recorre cada objeto en la lista.
+Clonar el Template: const $clone = template.content.cloneNode(true); clona el contenido del template, creando una nueva instancia de la estructura de la tarjeta.
+Actualizar el Contenido:
+querySelector("h1").textContent = element.titulo; actualiza el título.
+querySelector("img").setAttribute("src", element.src); actualiza la fuente de la imagen.
+querySelector("p").textContent = element.texto; actualiza el texto.
+Añadir al Fragmento: $frag.appendChild($clone); añade la tarjeta clonada y actualizada al fragmento.
+Añadir al DOM: $root.appendChild($frag); finalmente añade el fragmento con todas las tarjetas al contenedor principal, insertándolas en el DOM. -->
